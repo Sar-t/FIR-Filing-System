@@ -1,0 +1,39 @@
+<%- include('partials/header.ejs') %>
+<div class="container py-5" style="min-height: 100vh; background-color: #f8f9fa;">
+  <div class="text-center mb-4">
+    <h1 class="display-5" style="font-weight: bold; color: #0035ff;">View FIRs</h1>
+    <p class="text-muted">Click on an FIR to view its detailed information or search by FIR number.</p>
+  </div>
+
+  <form class="d-flex justify-content-center mb-4 pt-5" method="get" action="/FIR/search">
+    <input
+      type="text"
+      name="fir_no"
+      class="form-control"
+      placeholder="Enter FIR Number"
+      required
+      style="max-width: 300px; margin-right: 10px;"
+    />
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+  <% if (count > 0) { %>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-0" style="padding-top:20px;">
+      <% for (let i = 1; i <= count; i++) { %>
+        <div class="col">
+          <div class="card shadow-sm m-1" style="border-radius: 10px;">
+            <div class="card-body text-center">
+              <h5 class="card-title">FIR No. <%= i %></h5>
+              <a href="/FIR/<%= i %>" class="btn btn-primary mt-3">View Details</a>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  <% } else { %>
+    <div class="alert alert-info text-center mt-5">
+      <p>No FIRs available at the moment. Please check back later.</p>
+    </div>
+  <% } %>
+</div>
+<%- include('partials/footer.ejs') %>

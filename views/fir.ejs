@@ -1,0 +1,70 @@
+<%- include("partials/header.ejs") %>
+<div class="container-fluid form-background pt-5" 
+     style="height: 800px; background-color: #f4f4f9; font-weight: bold;">
+    <h1 class="text-center" style="padding-top: 150px; color: #b22222;">Report an Incident - FIR Filling</h1>
+    <section class="container pt-25">
+        <div class="d-flex justify-content-center align-items-center" 
+             style="color: #0035ff; font-size: 20px;">
+            <div class="w-75 p-4" 
+                 style="background-color: #ffffff; border-radius: 8px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+                <form class="row g-3" action="/submit-form" onsubmit="alert('Form Submitted')" method="post">
+                    <div class="col-md-4">
+                        <label for="FirstName" class="form-label">Complainant Name</label>
+                        <input type="text" name="FirstName" class="form-control" id="FirstName" placeholder="First Name" required>
+                    </div>
+                    <div class="col-md-4 pt-2">
+                        <label for="MiddleName" class="form-label"></label>
+                        <input type="text" name="MiddleName" class="form-control" id="MiddleName" placeholder="Middle Name">
+                    </div>
+                    <div class="col-md-4 pt-2">
+                        <label for="LastName" class="form-label"></label>
+                        <input type="text" name="LastName" class="form-control" id="LastName" placeholder="Last Name" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputPhone" class="form-label">Phone No.</label>
+                        <input type="tel" name="phone" class="form-control" id="inputPhone" required>
+                    </div>
+                    <div class="col-8">
+                        <label for="inputAddress" class="form-label">Address</label>
+                        <input type="text" name="address" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputPlace" class="form-label">Place of Incident</label>
+                        <input type="text" name="venue" class="form-control" id="inputPlace" placeholder="Enter place where crime happened" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputDate" class="form-label">Date of Incident</label>
+                        <input type="date" name="date" class="form-control" id="inputDate" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputTime" class="form-label">Time of Incident</label>
+                        <input type="time" name="time" class="form-control" id="inputTime" placeholder="Approximate Time">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputStation" class="form-label">Select Police Station</label>
+                        <select name="station" id="inputStation" class="form-select">
+                            <option selected>Choose...</option>
+                            <% for (let i = 0; i < stations.length; i++) { %>
+                                <option><%= stations[i].station_name %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="inputSuspects" class="form-label">Suspects</label>
+                        <input type="text" name="suspects" class="form-control" id="inputSuspects" placeholder="Enter comma separated names of suspects if any">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputKeywords" class="form-label">Keywords</label>
+                        <input type="text" name="keywords" class="form-control" id="inputKeywords" placeholder="Enter comma separated keywords">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary extra">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="/index.js"></script>
+
+<%- include("partials/footer.ejs") %>

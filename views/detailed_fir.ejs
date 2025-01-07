@@ -1,0 +1,29 @@
+<%- include('partials/header.ejs') %>
+<div class="container py-5" style="min-height: 100vh; background-color: #f8f9fa;">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm" style="border-radius: 10px;">
+        <div class="card-header bg-primary text-white text-center" style="border-radius: 10px 10px 0 0;">
+          <h2>FIR Details</h2>
+        </div>
+        <div class="card-body" style = "padding-top:100px;">
+          <p><strong>FIR Number:</strong> <%= data.fir_no %></p>
+          <p><strong>Station Number:</strong> <%= data.station_no %></p>
+          <p><strong>Station Name:</strong> <%= data.station_name %></p>
+          <p><strong>Incident Occurred At:</strong> <%= data.incident_occured_at %></p>
+          <p><strong>Complaint Registered At:</strong> <%= data.complaint_registered_at %></p>
+          <p><strong>Place of Incident:</strong> <%= data.place_of_incident %></p>
+          <p><strong>Complainant Name:</strong> <%= data.complainant_name %></p>
+          <p><strong>Complainant Address:</strong> <%= data.complainant_address %></p>
+          <p><strong>Phone Number:</strong> <%= data.phone_no %></p>
+          <p><strong>Sections Applied:</strong> <%= data.sections_applied %></p>
+          <p><strong>Suspects:</strong> <%= data.suspects %></p>
+        </div>
+        <div class="card-footer text-center">
+          <a href="/viewFIR" class="btn btn-primary">Back to FIR List</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer.ejs') %>

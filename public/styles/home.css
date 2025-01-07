@@ -1,0 +1,79 @@
+.profile{
+    height: 150px;
+    width: 100px;
+}
+.formbackground{
+    background-image: url("/images/back.jpg");
+}
+.roboto-black-italic {
+    font-family: "Roboto", serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size:100px;
+}
+.footer {
+    background-color: #f8f9fa; /* Light gray background */
+    border-top: 2px solid #dee2e6; /* Border to separate footer */
+    width: 100%; /* Ensure the footer spans the entire width */
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    height: 400px;
+  }
+  
+  .footer .container {
+    max-width: 1140px; /* Optionally set a max width for the content */
+    margin: 0 auto; /* Center the content */
+  }
+  
+  .footer h3 {
+    font-weight: 700;
+    color: #343a40; /* Dark gray color */
+  }
+  
+  .footer p,
+  .footer li {
+    color: #6c757d; /* Medium gray color */
+  }
+  
+  .footer ul {
+    padding-left: 0;
+  }
+  
+  .footer li a:hover {
+    color: #007bff; /* Link hover color */
+  }
+  
+  .footer .social-icons a {
+    font-size: 1.5rem;
+    color: #6c757d;
+    transition: color 0.3s;
+  }
+  
+  .footer .social-icons a:hover {
+    color: #007bff; /* Icon hover color */
+  }
+  
+  /* Optional: Styling the row to make sure the sections are equally spaced */
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+  .gradient-background {
+    background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+  } 
+  body{
+    background-color: #f5f0e1;
+    
+  } 
+  .color1{
+    color:orange;
+  }
+  .color2{
+    color:blue;
+  }
+  .color3{
+    color:green;
+  }

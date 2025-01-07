@@ -1,0 +1,46 @@
+<%- include("partials/header.ejs") %>
+<div style="padding-top: 200px; background-color: #f8f9fa; min-height: 100vh;">
+  <% if (locals.Chapters) { %>
+    <div class="mb-5">
+      <h2 class="text-center mb-4" style="color: rgb(80, 49, 25); font-weight: bold;">Chapters</h2>
+      <div class="list-group">
+        <% for (let i = 0; i < Chapters.length; i++) { %>
+          <a href="/Chapter-<%= i %>" class="list-group-item list-group-item-action" style="color: rgb(80, 49, 25); font-size: 1.25rem;">
+            <%= Chapters[i].Chapter_no %>. <%= Chapters[i].Chapter_name %>
+          </a>
+        <% } %>
+      </div>
+    </div>
+  <% } %>
+
+  <% if (locals.Sections) { %>
+    <div class="mb-5">
+      <h2 class="text-center mb-4" style="color: rgb(80, 49, 25); font-weight: bold;">Sections</h2>
+      <div class="list-group">
+        <% for (let i = 0; i < Sections.length; i++) { %>
+          <a href="/Section-<%= Sections[i].Section_number %>" class="list-group-item list-group-item-action" style="color: rgb(80, 49, 25); font-size: 1.25rem;">
+            <%= Sections[i].Section_number %>. <%= Sections[i].Section_title %>
+          </a>
+        <% } %>
+      </div>
+    </div>
+  <% } %>
+
+  <% if (locals.Section_description) { %>
+    <div class="card shadow-sm">
+      <div class="card-header bg-primary text-white">
+        <h3 class="text-center">Section Description</h3>
+      </div>
+      <div class="card-body" style="font-size: 1.2rem; line-height: 1.8;">
+        <p><strong>Section Number:</strong> <%= Section_description[0].Section_number %></p>
+        <p><strong>Section Title:</strong> <%= Section_description[0].Section_title %></p>
+        <p><strong>Description:</strong> <%= Section_description[0].description %></p>
+        <p><strong>Cognizability:</strong> <%= Section_description[0].cognizability %></p>
+        <p><strong>Bailability:</strong> <%= Section_description[0].Bailability %></p>
+        <p><strong>Punishment:</strong> <%= Section_description[0].punishment %></p>
+        <p><strong>Fine:</strong> <%= Section_description[0].fine %></p>
+      </div>
+    </div>
+  <% } %>
+</div>
+<%- include("partials/footer.ejs") %>
